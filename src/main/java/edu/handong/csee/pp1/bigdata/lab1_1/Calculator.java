@@ -68,7 +68,8 @@ public class Calculator {
 		print("SUM:" , sum(firstIntArg, secondIntArg));
 		print("SUB:" , this.subtract(firstIntArg, secondIntArg));
 		print("*:" , multiply(firstIntArg, secondIntArg));
-		print("DV:" , divide(firstIntArg,secondIntArg));
+		print("DV:" , (int)divide(firstIntArg,secondIntArg));
+		print("MOD:" , mod(firstIntArg,secondIntArg));
 	}
 
 	
@@ -99,7 +100,12 @@ public class Calculator {
 		return first * second;
 	}
 
-	int divide(int first, int second) {
+	double divide(int first, int second) {
+		if(second==0)
+		{
+			System.out.println("Error: Divided by zero!");
+			return Double.NaN;
+		}
 		countForAnyCompution++;
 		localCount++;
 		return first / second;
@@ -107,7 +113,12 @@ public class Calculator {
 
 	int mod(int first, int second) {
 		// TODO implement the body of this method
-		return 0;
+		if(second==0)
+		{
+			System.out.println("Error: second can't be 0!");
+			return 0;
+		}
+		return first % second;
 	}
 
 	static int getCount() {
