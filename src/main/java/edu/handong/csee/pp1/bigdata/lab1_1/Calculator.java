@@ -100,11 +100,6 @@ public class Calculator {
 	}
 
 	int divide(int first, int second) {
-		if(second==0 && first!=0)
-		{
-			System.out.println("Error: Divided by zero!");
-			return 0;
-		}
 		countForAnyCompution++;
 		localCount++;
 		return first / second;
