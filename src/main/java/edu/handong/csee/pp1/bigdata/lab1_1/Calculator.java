@@ -90,7 +90,7 @@ public class Calculator {
 	int subtract(int first, int second) {
 		countForAnyCompution++;
 		localCount++;
-		return first + second;
+		return first - second;
 	}
 
 	int multiply(int first, int second) {
@@ -100,6 +100,11 @@ public class Calculator {
 	}
 
 	int divide(int first, int second) {
+		if(second==0 && first!=0)
+		{
+			System.out.println("Error: Divided by zero!");
+			return 0;
+		}
 		countForAnyCompution++;
 		localCount++;
 		return first / second;
